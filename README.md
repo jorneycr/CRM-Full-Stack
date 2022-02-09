@@ -1,8 +1,8 @@
 # CRM 
 ### The project is made with MongoDB, Mongoose, Handlebars, MVC, Node, Express, React, Context, Axios, Webpack, Multer, Nodemailer, and etc.
 
-## `npm run start`
+## https://crm-cr.netlify.app/iniciar-sesion
 
-### Home
+### User `jorney95@live.com`
 
-## `http://localhost:5000/`
+### Password `123`
