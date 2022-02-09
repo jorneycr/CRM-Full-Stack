@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "60ccc9e2324b7a1dac3b48e2"
+  },
+  "nombre": "React JS",
+  "precio": 30,
+  "imagen": "5u84Vv-Is.jpeg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60ddfc7fe0d74a45ace18936"
+  },
+  "nombre": "Node JS",
+  "precio": 20,
+  "imagen": "KQ0skPCrl.jpeg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60ddfdc2e0d74a45ace20814"
+  },
+  "nombre": "Vue",
+  "precio": 50,
+  "imagen": "XaD6yZ4E6.jpeg",
+  "__v": 0
+}]

@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "60efbe279cbfae47a89bd485"
+  },
+  "cliente": {
+    "$oid": "60cc27ea2c782251f090338c"
+  },
+  "pedido": [
+    {
+      "_id": {
+        "$oid": "60ddfc7fe0d74a45ace18936"
+      },
+      "producto": {
+        "$oid": "60ddfc7fe0d74a45ace18936"
+      },
+      "cantidad": 2
+    },
+    {
+      "_id": {
+        "$oid": "60ccc9e2324b7a1dac3b48e2"
+      },
+      "producto": {
+        "$oid": "60ccc9e2324b7a1dac3b48e2"
+      },
+      "cantidad": 4
+    }
+  ],
+  "total": 160,
+  "__v": 0
+}]

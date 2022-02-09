@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "60cc27ea2c782251f090338c"
+  },
+  "nombre": "Dyrlen Pio",
+  "apellido": "Ruiz",
+  "empresa": "A S.A.",
+  "email": "pequenita@mia.com",
+  "telefono": "3545751561",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60ccf03a981f010c785b3f06"
+  },
+  "nombre": "Jorney",
+  "apellido": "Lopez",
+  "empresa": "Verys",
+  "email": "jorney95@live.com",
+  "telefono": "83181744",
+  "__v": 0
+}]
