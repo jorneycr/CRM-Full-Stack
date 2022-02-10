@@ -1,5 +1,5 @@
 # CRM 
-### The project is made with MongoDB, Mongoose, Handlebars, MVC, Node, Express, React, Context, Axios, Webpack, Multer, Nodemailer, and etc.
+### The project is made with MongoDB, Mongoose, MVC, Node, Express, React, Context, Axios, Webpack, Multer, Nodemailer, and etc.
 
 ## https://crm-cr.netlify.app
 
