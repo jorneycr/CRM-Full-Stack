@@ -1,129 +1,151 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const clienteController = require('../controllers/clienteController');
+const clienteController = require("../controllers/clienteController");
 
-const productosController = require('../controllers/productosController');
+const productosController = require("../controllers/productosController");
 
-const pedidosController = require('../controllers/pedidosController');
+const pedidosController = require("../controllers/pedidosController");
 
-const usuariosController = require('../controllers/usuariosController');
+const usuariosController = require("../controllers/usuariosController");
+
+const urlController = require("../controllers/urlController");
 
 //middleware para proteger las rutas
-const auth = require('../middleware/auth');
-
+const auth = require("../middleware/auth");
 
 module.exports = function () {
-    /**Clientes */
-    //agregar los clientes via post
-    router.post('/clientes', 
-        // auth,
-        clienteController.nuevoCliente
-    );
+  /**Url */
+  // crea una URL mas corta
+  router.post("/url", urlController.addUrl);
 
-    //obtener clientes
-    router.get('/clientes',
-        // auth,
-        clienteController.mostrarClientes
-    );
+  //obtiene la url
+  router.get("/:code", urlController.getUrl);
 
-    //muestra un cliente especifico
-    router.get('/clientes/:idCliente',
-        // auth,
-        clienteController.mostrarCliente
-    );
+  /**Clientes */
+  //agregar los clientes via post
+  router.post(
+    "/clientes",
+    // auth,
+    clienteController.nuevoCliente
+  );
 
-    //actualizar cliente
-    router.put('/clientes/:idCliente', 
-        // auth,
-        clienteController.actualizarCliente
-    );
+  //obtener clientes
+  router.get(
+    "/clientes",
+    // auth,
+    clienteController.mostrarClientes
+  );
 
-    //eliminar por cliente
-    router.delete('/clientes/:idCliente',
-        // auth,
-        clienteController.eliminarCliente
-    );
+  //muestra un cliente especifico
+  router.get(
+    "/clientes/:idCliente",
+    // auth,
+    clienteController.mostrarCliente
+  );
 
-    /**Productos */
-    //nuevos productos
-    router.post('/productos',
-        // auth,
-        productosController.subirArchivo,
-        productosController.nuevoProducto
-    );
+  //actualizar cliente
+  router.put(
+    "/clientes/:idCliente",
+    // auth,
+    clienteController.actualizarCliente
+  );
 
-    //muestra todos los productos
-    router.get('/productos',
-        // auth,
-        productosController.mostrarProductos
-    );
+  //eliminar por cliente
+  router.delete(
+    "/clientes/:idCliente",
+    // auth,
+    clienteController.eliminarCliente
+  );
 
-    //mostrar producto por id
-    router.get('/productos/:idProducto', 
-        // auth,
-        productosController.mostrarProducto
-    );
+  /**Productos */
+  //nuevos productos
+  router.post(
+    "/productos",
+    // auth,
+    productosController.subirArchivo,
+    productosController.nuevoProducto
+  );
 
-    //actualizar productos
-    router.put('/productos/:idProducto',
-        // auth,
-        productosController.subirArchivo,
-        productosController.actualizarProducto
-    )
+  //muestra todos los productos
+  router.get(
+    "/productos",
+    // auth,
+    productosController.mostrarProductos
+  );
 
-    //eliminar producto
-    router.delete('/productos/:idProducto', 
-        // auth,
-        productosController.eliminarProducto
-    );
+  //mostrar producto por id
+  router.get(
+    "/productos/:idProducto",
+    // auth,
+    productosController.mostrarProducto
+  );
 
-    router.post('/productos/busqueda/:query', 
-        // auth,
-        productosController.buscarProducto
-    );
+  //actualizar productos
+  router.put(
+    "/productos/:idProducto",
+    // auth,
+    productosController.subirArchivo,
+    productosController.actualizarProducto
+  );
 
-    /**Pedidos */
-    //nuevo pedido
-    router.post('/pedidos/nuevo/:idUsuario', 
-        // auth,
-        pedidosController.nuevoPedido
-    );
+  //eliminar producto
+  router.delete(
+    "/productos/:idProducto",
+    // auth,
+    productosController.eliminarProducto
+  );
 
-    //mostrar nuevos pedidos
-    router.get('/pedidos', 
-        // auth,
-        pedidosController.mostrarPedidos
-    );
+  router.post(
+    "/productos/busqueda/:query",
+    // auth,
+    productosController.buscarProducto
+  );
 
-    //mostrar un pedido por su id
-    router.get('/pedidos/:idPedido', 
-        // auth,
-        pedidosController.mostrarPedido
-    );
+  /**Pedidos */
+  //nuevo pedido
+  router.post(
+    "/pedidos/nuevo/:idUsuario",
+    // auth,
+    pedidosController.nuevoPedido
+  );
 
-    //actualizar pedidos
-    router.put('/pedidos/:idPedido', 
-        // auth,
-        pedidosController.actualizarPedido
-    );
+  //mostrar nuevos pedidos
+  router.get(
+    "/pedidos",
+    // auth,
+    pedidosController.mostrarPedidos
+  );
 
-    //eliminar un pedido por su id
-    router.delete('/pedidos/:idPedido', 
-        // auth,
-        pedidosController.eliminarPedido
-    );
-            
+  //mostrar un pedido por su id
+  router.get(
+    "/pedidos/:idPedido",
+    // auth,
+    pedidosController.mostrarPedido
+  );
 
-    //Usuarios
-    router.post('/crear-cuenta',
-        // auth,
-        usuariosController.registrarUsuario
-    );
+  //actualizar pedidos
+  router.put(
+    "/pedidos/:idPedido",
+    // auth,
+    pedidosController.actualizarPedido
+  );
 
-    router.post('/iniciar-sesion',
-        usuariosController.autenticarUsuario
-    );
+  //eliminar un pedido por su id
+  router.delete(
+    "/pedidos/:idPedido",
+    // auth,
+    pedidosController.eliminarPedido
+  );
 
-    return router;
-}
+  //Usuarios
+  router.post(
+    "/crear-cuenta",
+    // auth,
+    usuariosController.registrarUsuario
+  );
+
+  router.post("/iniciar-sesion", usuariosController.autenticarUsuario);
+
+  return router;
+};
